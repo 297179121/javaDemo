@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.commons.compress.archivers.ArchiveException;
 import org.apache.commons.compress.archivers.ArchiveInputStream;
@@ -16,9 +14,14 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.io.IOUtils;
 
 public class YFile {
-	public static void decompress(File zipFile, String folderPath){
+	/**
+	 * 解压zip
+	 * @param zipFile	zip文件路径
+	 * @param folderPath	要保存的文件夹路径
+	 */
+	public static void unZip(File zipFile, String folderPath){
 
-		List<File> archiveContents = new ArrayList<File>();
+		//List<File> archiveContents = new ArrayList<File>();
 		
 		try {
 			// create the input stream for the file, then the input stream for the actual zip file
@@ -37,7 +40,7 @@ public class YFile {
 			    // close the output stream
 			    os.close();     
 			
-			    archiveContents.add(outputFile);
+			    //archiveContents.add(outputFile);
 			
 			    entry = (ZipArchiveEntry) ais.getNextEntry();
 			}
