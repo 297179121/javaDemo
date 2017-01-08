@@ -19,5 +19,12 @@ public class DemoTest {
 			Assert.fail(e.getMessage());
 		}
 	}
+	
+	@Test
+	public void testEncode(){
+		File file = new File("D:\\mywork\\project\\eclipsespace\\javaDemo\\doc\\123.jpg");
+		String str = YEncode.toBase64(file);
+		System.out.println(str);
+	}
 
 }
