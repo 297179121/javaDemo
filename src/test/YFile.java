@@ -24,6 +24,10 @@ public class YFile {
 		//List<File> archiveContents = new ArrayList<File>();
 		
 		try {
+			
+			File folder = new File(folderPath);
+			if( !folder.exists() )folder.mkdirs();
+			
 			// create the input stream for the file, then the input stream for the actual zip file
 			final InputStream is = new FileInputStream(zipFile);
 			ArchiveInputStream ais = new ArchiveStreamFactory().createArchiveInputStream(ArchiveStreamFactory.ZIP, is);
